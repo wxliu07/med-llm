@@ -1,0 +1,24 @@
+import os
+from dotenv import load_dotenv, dotenv_values
+import gradio as gr
+
+print(gr.__version__)
+
+load_dotenv(".env", override=False)  # take environment variables from ..env.
+print(f"setting environment variables: {dotenv_values('.env')}")
+
+
+def get_app_root():
+    return os.getcwd()
+
+
+def get_env_value(key):
+    value = os.environ.get(key)
+    if value is None:
+        raise ValueError(f"缺少必要环境变量配置: {key}")
+    return value
+
+
+if __name__ == '__main__':
+    print("app root is: " + get_app_root())
+    print(f"your API key is: {get_env_value('LLM_API_KEY')}")
