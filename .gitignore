@@ -1,3 +1,5 @@
+.env
+
 # 注释：忽略所有日志文件
 *.log
 
@@ -13,8 +15,6 @@
 
 # 忽略所有ocr/results目录及其内容
 temp/ocr/results/
-
-.env
 
 # 忽略所有.pyc文件
 *.pyc
